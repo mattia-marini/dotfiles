@@ -1,0 +1,168 @@
+@import url("/home/mattia/.cache/matugen_outputs/waybar-colors.css");
+@import url("/home/mattia/.cache/matugen_outputs/waybar-fonts.css");
+
+window#waybar {
+    all: unset;
+}
+
+.modules-left {
+    padding: 7px;
+    margin: 10px 0px 0px 10px;
+    /* border-radius: 6px; */
+    border: 1px solid @primary;
+    background: alpha(@surface, .8);
+}
+
+.modules-right {
+    padding: 7px;
+    margin: 10px 10px 0px 0px;
+    /* border-radius: 6px; */
+    border: 1px solid @primary;
+    background: alpha(@surface, .8);
+}
+
+tooltip {
+    background: @surface;
+    color: @on_surface_variant;
+}
+
+#clock:hover,
+#custom-pacman:hover,
+#custom-suspend:hover,
+#custom-notification:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#pulseaudio:hover {
+    transition: all .3s ease;
+    color: @primary;
+}
+
+/* #custom-notification, */
+#clock,
+/* #custom-pacman, */
+#bluetooth,
+#network,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color: @on_surface_variant;
+}
+
+#workspaces {
+    padding: 0px 5px;
+}
+
+#workspaces button {
+    all: unset;
+    padding: 0px 5px;
+    color: alpha(@primary, .4);
+    transition: all .2s ease;
+}
+
+#workspaces button:hover {
+    color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+
+#workspaces button.active {
+    color: @primary;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+#workspaces button.empty {
+    color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+
+#workspaces button.empty:hover {
+    color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+
+#workspaces button.empty.active {
+    color: @primary;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#group-expand {
+    padding: 0px 5px;
+    transition: all .3s ease;
+}
+
+#custom-expand {
+    padding: 0px 5px;
+    color: alpha(@foreground, .2);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
+    transition: all .3s ease;
+}
+
+#custom-expand:hover {
+    color: alpha(@foreground, .2);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+#custom-colorpicker {
+    padding: 0px 5px;
+}
+
+#custom-endpoint {
+    color: transparent;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+}
+
+#tray {
+    padding: 0px 5px;
+    transition: all .3s ease;
+}
+
+#tray menu * {
+    padding: 0px 5px;
+    transition: all .3s ease;
+}
+
+#tray menu separator {
+    padding: 0px 5px;
+    transition: all .3s ease;
+}
+
+#custom-cava {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+    color: #a6e3a1;
+    padding: 0px 5px;
+}
+#custom-cava.silent {
+    color: #a6e3a1;
+}

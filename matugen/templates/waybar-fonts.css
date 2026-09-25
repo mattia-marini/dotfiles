@@ -1,0 +1,4 @@
+* {
+  font-family: '{{ custom.font.family }}';
+  font-size: {{ custom.font.size_medium }}px;
+}

@@ -1,0 +1,125 @@
+# Common things
+# ctrl + cmd + , to reload
+# search
+map ctrl+f launch --type=overlay --stdin-source=@screen_scrollback fzf --no-sort --no-mouse --exact -i
+
+# shell /usr/local/bin/fish
+shell fish
+# background_opacity 0.7
+enabled_layouts tall:bias=50;full_size=1;mirrored=false
+
+# allow system clipboard access over shh
+clipboard_control write-clipboard write-primary read-clipboard read-primary
+
+# background #FFFFFF
+tab_bar_style             custom
+tab_bar_edge top
+tab_bar_margin_height 0.0 0.8
+tab_bar_align center
+tab_title_template         "{fmt.bg.default_bg}{fmt.fg.inactive_bg} {fmt.fg.tab}{fmt.bg.tab} 󰨸 {index} {title} {fmt.bg.default_bg}{fmt.fg.inactive_bg} {fmt.fg.tab}{fmt.bg.tab}"
+active_tab_title_template  "{fmt.bg.default_bg}{fmt.fg.active_bg} {fmt.fg.tab}{fmt.bg.tab} 󰨸 {index} {title} {fmt.bg.default_bg}{fmt.fg.active_bg} {fmt.fg.tab}{fmt.bg.tab}"
+# tab_separator             ""
+
+sync_to_monitor yes
+
+editor nvim
+allow_remote_control yes
+listen_on unix:/tmp/kitty
+
+
+disable_ligatures never
+# text_composition_strategy legacy 
+# modify_font cell_height 150%
+hide_window_decorations titlebar-only
+
+
+# resize_debounce_time 1
+# resize_draw_strategy size
+# resize_debounce_time 1 1
+cursor_blink_interval 0
+
+
+# remember_window_size  yes
+# initial_window_width  640
+# initial_window_height 400
+                                                               
+resize_in_steps yes 
+# window_margin_width 0
+# placement_strategy center
+# window_padding_width 0
+# window_padding_height 0 
+
+
+mouse_hide_wait 1
+
+cursor_blink_interval 0
+
+
+map cmd+k resize_window wider 5
+map cmd+j resize_window narrower 5
+
+map cmd+i resize_window taller
+map cmd+u resize_window shorter
+
+map cmd+l next_window 
+map cmd+h previous_window
+
+# cursor_trail 1
+# cursor_trail_decay 0.01 0.2
+# cursor_trail_start_threshold 0
+# vim:fileencoding=utf-8:foldmethod=marker
+
+
+# Left arrow
+map --when-focus-on "not var:in_editor=1" ctrl+h send_text all \x1b[D
+
+# Right arrow
+map --when-focus-on "not var:in_editor=1" ctrl+l send_text all \x1b[C
+
+# Up arrow
+map --when-focus-on "not var:in_editor=1" ctrl+k send_text all \x1b[A
+
+# Down arrow
+map --when-focus-on "not var:in_editor=1" ctrl+j send_text all \x1b[B
+
+# Nvim ctrl-o
+map --when-focus-on "not var:in_editor=1" ctrl+o goto_tab -1
+
+map cmd+l next_tab
+map cmd+h previous_tab
+map cmd+k move_tab_forward
+map cmd+j move_tab_backward
+
+# kitty-scrollback.nvim Kitten alias
+action_alias kitty_scrollback_nvim kitten '/Users/mattia/.local/share/nvim/lazy/kitty-scrollback.nvim/python/kitty_scrollback_nvim.py'
+# Browse scrollback buffer in nvim
+
+map kitty_mod+h kitty_scrollback_nvim --nvim-args -u /Users/mattia/.config/nvim/scrollback_init.lua
+# Browse output of the last shell command in nvim
+map kitty_mod+g kitty_scrollback_nvim --config ksb_builtin_last_cmd_output
+# Show clicked command output in nvim
+mouse_map ctrl+shift+right press ungrabbed combine : mouse_select_command_output : kitty_scrollback_nvim --config ksb_builtin_last_visited_cmd_output
+
+env PATH=${PATH}:${HOME}/.local/share/mise/shims
+
+
+# BEGIN_KITTY_THEME
+# Gruvbox-Material
+# include current-theme.conf
+# END_KITTY_THEME
+
+map ctrl+c  copy_or_interrupt
+
+# Matugen-generated theme colors (background/foreground/borders).
+include /home/mattia/.cache/matugen_outputs/kitty-colors.conf
+include /home/mattia/.cache/matugen_outputs/kitty-fonts.conf
+
+include overrides.conf
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="DepartureMono Nerd Font Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS

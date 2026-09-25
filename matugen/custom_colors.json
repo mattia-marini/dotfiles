@@ -1,0 +1,7 @@
+{
+	"custom_colors": {
+		"green": { "color": "#4CAF50" },
+		"yellow": { "color": "#FFC107" },
+		"red": { "color": "#F44336" }
+	}
+}

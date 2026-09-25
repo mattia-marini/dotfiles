@@ -1,0 +1,90 @@
+[config]
+import_json_files = ["./custom_keywords.json", "./custom_colors.json"]
+
+
+[config.wallpaper]
+# Whether to set the wallpaper or not
+set = true
+
+# The base command to run for applying the wallpaper.
+# Keywords like {{ image }} or anything that works inside of hooks works here.
+# You could also set a static color if you use the color keywords and the wallpaper setter supports it.
+command = "awww img --transition-type center '{{ image }}'"
+
+[templates.waybar-colors]
+input_path = "./templates/waybar-colors.css"
+output_path = "~/.cache/matugen_outputs/waybar-colors.css"
+post_hook = "pkill -SIGUSR2 waybar || true"
+
+[templates.waybar-fonts]
+input_path = "./templates/waybar-fonts.css"
+output_path = "~/.cache/matugen_outputs/waybar-fonts.css"
+
+
+[templates.kitty-colors]
+input_path = "./templates/kitty-colors.conf"
+output_path = "~/.cache/matugen_outputs/kitty-colors.conf"
+post_hook = "kitty @ load-config ~/.config/kitty/kitty.conf"
+
+[templates.kitty-fonts]
+input_path = "./templates/kitty-fonts.conf"
+output_path = "~/.cache/matugen_outputs/kitty-fonts.conf"
+# post_hook = "pkill -USR1 -x kitty"
+
+
+[templates.gtk3]
+input_path = "./templates/gtk.css"
+output_path = "~/.cache/matugen_outputs/gtk3.css"
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = "./templates/gtk.css"
+output_path = "~/.cache/matugen_outputs/gtk4.css"
+
+# Firefox
+[templates.pywalfox]
+input_path = './templates/firefox.css'
+output_path = "~/.cache/matugen_outputs/pywalfox.css"
+post_hook = 'pywalfox update'
+
+[templates.fuzzel]
+input_path = "./templates/fuzzel.ini"
+output_path = "~/.cache/matugen_outputs/fuzzel.ini"
+
+[templates.rofi]
+input_path = "./templates/rofi.rasi"
+output_path = "~/.cache/matugen_outputs/rofi.rasi"
+
+[templates.neovim]
+input_path = './templates/neovim.json'
+output_path = '~/.cache/matugen_outputs/neovim.json'
+
+[templates.opencode]
+input_path = './templates/opencode.json'
+output_path = '~/.config/opencode/themes/matugen.json'
+post_hook = "pkill -SIGUSR2 opencode || true"
+
+[templates.starship]
+input_path = './templates/starship.toml'
+output_path = '~/.cache/matugen_outputs/starship.toml'
+
+# [templates.fuzzel]
+# input_path = "./templates/fuzzel.ini"
+# output_path = "~/.config/fuzzel/fuzzel.ini"
+
+[templates.mango]
+input_path = "./templates/mango.conf"
+output_path = "~/.config/mango/colors.conf"
+post_hook = "mmsg dispatch reload_config"
+
+[templates.mako]
+input_path = "./templates/mako.conf"
+output_path = "~/.cache/matugen_outputs/mako.conf"
+post_hook = "makoctl reload"
+
+
+
+
+# [templates.niri]
+# input_path = "./templates/niri.kdl"
+# output_path = "~/.config/niri/colors.kdl"

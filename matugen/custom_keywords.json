@@ -1,0 +1,15 @@
+{
+	"custom": {
+		"font": {
+			"family": "BlexMono Nerd Font Mono",
+			"size_small": "8",
+			"size_medium": "10",
+			"size_big": "14",
+
+			"size_small_15": "12",
+			"size_medium_15": "15",
+			"size_big_15": "21"
+		},
+		"_font": "DepartureMono Nerd Font Mono"
+	}
+}

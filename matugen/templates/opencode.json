@@ -1,0 +1,94 @@
+{
+    "$schema": "https://opencode.ai/theme.json",
+    "defs": {
+        "bg": "{{ colors.surface.default.hex }}",
+        "fg": "{{ colors.on_background.default.hex }}",
+        "on_surface": "{{ colors.on_surface.default.hex }}",
+        "surface": "{{ colors.surface.default.hex }}",
+        "surface_variant": "{{ colors.surface_variant.default.hex }}",
+        "on_surface_variant": "{{ colors.on_surface_variant.default.hex }}",
+
+        "primary": "{{ colors.primary.default.hex }}",
+        "on_primary": "{{ colors.on_primary.default.hex }}",
+        "primary_container": "{{ colors.primary_container.default.hex }}",
+        "on_primary_container": "{{ colors.on_primary_container.default.hex }}",
+
+        "secondary": "{{ colors.secondary.default.hex }}",
+        "on_secondary": "{{ colors.on_secondary.default.hex }}",
+        "secondary_container": "{{ colors.secondary_container.default.hex }}",
+        "on_secondary_container": "{{ colors.on_secondary_container.default.hex }}",
+
+        "tertiary": "{{ colors.tertiary.default.hex }}",
+        "on_tertiary": "{{ colors.on_tertiary.default.hex }}",
+        "tertiary_container": "{{ colors.tertiary_container.default.hex }}",
+        "on_tertiary_container": "{{ colors.on_tertiary_container.default.hex }}",
+
+        "error": "{{ colors.error.default.hex }}",
+        "on_error": "{{ colors.on_error.default.hex }}",
+        "error_container": "{{ colors.error_container.default.hex }}",
+        "on_error_container": "{{ colors.on_error_container.default.hex }}",
+
+        "outline": "{{ colors.outline.default.hex }}",
+        "outline_variant": "{{ colors.outline_variant.default.hex }}"
+    },
+    "theme": {
+        "primary": "primary",
+        "secondary": "secondary",
+        "accent": "tertiary",
+        "error": "error",
+        "warning": "tertiary",
+        "success": "secondary",
+        "info": "primary",
+
+        "text": "fg",
+        "textMuted": "on_surface_variant",
+        "selectedListItemText": "bg",
+
+        "background": "none",
+        "backgroundPanel": "none",
+        "backgroundElement": "surface_variant",
+        "backgroundMenu": "surface_variant",
+
+        "border": "outline_variant",
+        "borderActive": "primary",
+        "borderSubtle": "outline_variant",
+
+        "diffAdded": "secondary",
+        "diffRemoved": "error",
+        "diffContext": "on_surface_variant",
+        "diffHunkHeader": "on_surface_variant",
+        "diffHighlightAdded": "primary",
+        "diffHighlightRemoved": "error",
+        "diffAddedBg": "secondary_container",
+        "diffRemovedBg": "error_container",
+        "diffContextBg": "surface",
+        "diffLineNumber": "on_surface_variant",
+        "diffAddedLineNumberBg": "secondary_container",
+        "diffRemovedLineNumberBg": "error_container",
+
+        "markdownText": "fg",
+        "markdownHeading": "primary",
+        "markdownLink": "primary",
+        "markdownLinkText": "primary",
+        "markdownCode": "secondary",
+        "markdownBlockQuote": "outline",
+        "markdownEmph": "tertiary",
+        "markdownStrong": "fg",
+        "markdownHorizontalRule": "outline_variant",
+        "markdownListItem": "primary",
+        "markdownListEnumeration": "primary",
+        "markdownImage": "secondary",
+        "markdownImageText": "secondary",
+        "markdownCodeBlock": "on_surface",
+
+        "syntaxComment": "outline",
+        "syntaxKeyword": "primary",
+        "syntaxFunction": "primary",
+        "syntaxVariable": "fg",
+        "syntaxString": "secondary",
+        "syntaxNumber": "tertiary",
+        "syntaxType": "tertiary",
+        "syntaxOperator": "on_surface_variant",
+        "syntaxPunctuation": "on_surface_variant"
+    }
+}

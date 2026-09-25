@@ -1,0 +1,30 @@
+pipewire wireplumber pipewire-audio pipewire-pulse pavucontrol
+bluez bluez-utils bluetui
+wl-clipboard
+nemo
+zathura
+
+
+# Notification
+mako
+
+# Notification
+mako
+
+# Hyprland 
+sudo pacman -S hyprland xorg-xwayland
+sudo pacman -S xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+sudo pacman -S waybar rofi-wayland hyprpaper
+sudo pacman -S hyprlock hypridle
+sudo pacman -S brightnessctl power-profiles-daemon
+sudo pacman -S hyprshot
+
+# Install 'yay' or 'paru' (Run from terminal after base install)
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+# sleep
+Enable S3 Sleep State in BIOS (CRITICAL):
+ -Before installing Arch, reboot into your ThinkPad BIOS (F1 at startup).
+ - Go to Config > Power > Sleep State and set it to Linux (or S3). This stops the laptop battery from draining while the lid is closed.   

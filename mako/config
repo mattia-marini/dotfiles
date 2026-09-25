@@ -1,0 +1,10 @@
+# Matugen-generated colors (font, background, text, borders)
+include=~/.cache/matugen_outputs/mako.conf
+
+# width=360
+# height=120
+# margin=12
+# padding=12
+# max-visible=5
+# default-timeout=10000
+# anchor=top-right

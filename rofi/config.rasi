@@ -1,0 +1,240 @@
+@import "/home/mattia/.cache/matugen_outputs/rofi.rasi"
+
+configuration {
+    terminal: "kitty";
+}
+
+
+/* ─────────────────────────────────────────────
+ * Window
+ * ───────────────────────────────────────────── */
+window {
+    background-color: @surface-container-low;
+    border: 2px;
+    border-color: @outline-variant;
+    // border-radius: 14px;
+}
+
+
+/* ─────────────────────────────────────────────
+ * Main container
+ * ───────────────────────────────────────────── */
+
+mainbox {
+    background-color: @surface;
+    spacing: 10px;
+}
+
+
+/* ─────────────────────────────────────────────
+ * Search bar
+ * ───────────────────────────────────────────── */
+
+inputbar {
+    background-color: @surface-container;
+    border: 1px;
+    border-color: @outline-variant;
+    border-radius: 10px;
+
+    padding: 10px 14px;
+    spacing: 8px;
+
+    text-color: @on-surface;
+
+    children: [
+        prompt,
+        entry,
+        case-indicator
+    ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @primary;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @on-surface;
+    placeholder-color: @on-surface-variant;
+}
+
+case-indicator {
+    background-color: transparent;
+    text-color: @on-surface-variant;
+}
+
+
+/* ─────────────────────────────────────────────
+ * List
+ * ───────────────────────────────────────────── */
+
+listview {
+    background-color: transparent;
+
+    spacing: 4px;
+    lines: 8;
+
+    // scrollbar: false;
+    border: 1px solid;
+    border-color: @outline-variant;
+}
+
+
+/* ─────────────────────────────────────────────
+ * Elements
+ * ───────────────────────────────────────────── */
+
+element {
+    background-color: transparent;
+    text-color: @on-surface;
+
+    padding: 9px 12px;
+    spacing: 10px;
+
+    border: 0;
+    border-radius: 8px;
+}
+
+
+/* Normal */
+element normal.normal {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+
+/* Selected */
+element selected.normal {
+    background-color: @secondary-container;
+    text-color: @on-secondary-container;
+}
+
+
+/* Alternate rows */
+element alternate.normal {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+
+/* Active entries */
+element normal.active {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+element selected.active {
+    background-color: @secondary-container;
+    text-color: @on-secondary-container;
+}
+
+element alternate.active {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+
+/* Urgent entries */
+element normal.urgent {
+    background-color: transparent;
+    text-color: @error;
+}
+
+element selected.urgent {
+    background-color: @error-container;
+    text-color: @on-error-container;
+}
+
+element alternate.urgent {
+    background-color: transparent;
+    text-color: @error;
+}
+
+
+/* ─────────────────────────────────────────────
+ * Element children
+ * ───────────────────────────────────────────── */
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+
+    size: 24px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+
+    highlight: none;
+}
+
+element-index {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+
+/* ─────────────────────────────────────────────
+ * Scrollbar
+ * ───────────────────────────────────────────── */
+
+scrollbar {
+    background-color: @surface-container;
+    handle-color: @outline;
+    handle-width: 6px;
+
+    border: 0;
+}
+
+
+/* ─────────────────────────────────────────────
+ * Message / errors
+ * ───────────────────────────────────────────── */
+
+message {
+    background-color: @surface-container;
+    border: 1px;
+    border-color: @outline-variant;
+    border-radius: 8px;
+
+    padding: 8px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+error-message {
+    background-color: @error-container;
+    text-color: @on-error-container;
+
+    border-radius: 8px;
+    padding: 10px;
+}
+
+
+/* ─────────────────────────────────────────────
+ * Mode switcher
+ * ───────────────────────────────────────────── */
+
+mode-switcher {
+    background-color: transparent;
+    spacing: 4px;
+}
+
+button {
+    background-color: transparent;
+    text-color: @on-surface-variant;
+
+    border-radius: 8px;
+    padding: 7px 10px;
+}
+
+button selected {
+    background-color: @secondary-container;
+    text-color: @on-secondary-container;
+}
+

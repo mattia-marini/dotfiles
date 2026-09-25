@@ -1,0 +1,16 @@
+set selection-clipboard clipboard
+
+# Enable smooth scrolling for continuous wheel/touchpad input
+# set font "BlexMono Nerd Font Mono 30"
+# set font 'terminus 30'
+# set font "monospace regular 30"
+
+set scroll-step 25
+set scroll-hstep 15
+
+# Optional: Disable smooth scrolling if GTK interpolated scrolling feels floaty/laggy
+# set smooth-scroll true
+
+# Reduce step size for vim keybindings (j/k)
+# set scroll-full-frame false
+# set scroll-page-aware false

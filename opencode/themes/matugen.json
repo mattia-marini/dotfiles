@@ -1,0 +1,94 @@
+{
+    "$schema": "https://opencode.ai/theme.json",
+    "defs": {
+        "bg": "#17130b",
+        "fg": "#ebe1d4",
+        "on_surface": "#ebe1d4",
+        "surface": "#17130b",
+        "surface_variant": "#4d4639",
+        "on_surface_variant": "#d1c5b4",
+
+        "primary": "#eac16c",
+        "on_primary": "#402d00",
+        "primary_container": "#5c4300",
+        "on_primary_container": "#ffdea1",
+
+        "secondary": "#d8c4a0",
+        "on_secondary": "#3b2f15",
+        "secondary_container": "#53452a",
+        "on_secondary_container": "#f5e0bb",
+
+        "tertiary": "#b1cfa9",
+        "on_tertiary": "#1e361b",
+        "tertiary_container": "#344d30",
+        "on_tertiary_container": "#cdebc3",
+
+        "error": "#ffb4ab",
+        "on_error": "#690005",
+        "error_container": "#93000a",
+        "on_error_container": "#ffdad6",
+
+        "outline": "#998f80",
+        "outline_variant": "#4d4639"
+    },
+    "theme": {
+        "primary": "primary",
+        "secondary": "secondary",
+        "accent": "tertiary",
+        "error": "error",
+        "warning": "tertiary",
+        "success": "secondary",
+        "info": "primary",
+
+        "text": "fg",
+        "textMuted": "on_surface_variant",
+        "selectedListItemText": "bg",
+
+        "background": "none",
+        "backgroundPanel": "none",
+        "backgroundElement": "surface_variant",
+        "backgroundMenu": "surface_variant",
+
+        "border": "outline_variant",
+        "borderActive": "primary",
+        "borderSubtle": "outline_variant",
+
+        "diffAdded": "secondary",
+        "diffRemoved": "error",
+        "diffContext": "on_surface_variant",
+        "diffHunkHeader": "on_surface_variant",
+        "diffHighlightAdded": "primary",
+        "diffHighlightRemoved": "error",
+        "diffAddedBg": "secondary_container",
+        "diffRemovedBg": "error_container",
+        "diffContextBg": "surface",
+        "diffLineNumber": "on_surface_variant",
+        "diffAddedLineNumberBg": "secondary_container",
+        "diffRemovedLineNumberBg": "error_container",
+
+        "markdownText": "fg",
+        "markdownHeading": "primary",
+        "markdownLink": "primary",
+        "markdownLinkText": "primary",
+        "markdownCode": "secondary",
+        "markdownBlockQuote": "outline",
+        "markdownEmph": "tertiary",
+        "markdownStrong": "fg",
+        "markdownHorizontalRule": "outline_variant",
+        "markdownListItem": "primary",
+        "markdownListEnumeration": "primary",
+        "markdownImage": "secondary",
+        "markdownImageText": "secondary",
+        "markdownCodeBlock": "on_surface",
+
+        "syntaxComment": "outline",
+        "syntaxKeyword": "primary",
+        "syntaxFunction": "primary",
+        "syntaxVariable": "fg",
+        "syntaxString": "secondary",
+        "syntaxNumber": "tertiary",
+        "syntaxType": "tertiary",
+        "syntaxOperator": "on_surface_variant",
+        "syntaxPunctuation": "on_surface_variant"
+    }
+}

@@ -1,24 +1,31 @@
 @import url("/home/mattia/.cache/matugen_outputs/waybar-colors.css");
 @import url("/home/mattia/.cache/matugen_outputs/waybar-fonts.css");
+@import url("/home/mattia/.cache/matugen_outputs/waybar-metrics.css");
 
 window#waybar {
     all: unset;
 }
 
 .modules-left {
-    padding: 7px;
-    margin: 10px 0px 0px 10px;
-    /* border-radius: 6px; */
-    border: 1px solid @primary;
+	padding: 7;
+    margin: 8 0 0 8;
     background: alpha(@surface, .8);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.modules-center {
+	padding: 7;
+    margin: 0px 0px 0px 10px;
+    margin: 8 0 0 0;
+    background: alpha(@surface, .8);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 }
 
 .modules-right {
-    padding: 7px;
-    margin: 10px 10px 0px 0px;
-    /* border-radius: 6px; */
-    border: 1px solid @primary;
+	padding: 7;
+    margin: 8 8 0 0;
     background: alpha(@surface, .8);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 }
 
 tooltip {

@@ -10,9 +10,9 @@ configuration {
  * ───────────────────────────────────────────── */
 window {
     background-color: @surface-container-low;
-    border: 2px;
+    border: @border-w;
     border-color: @outline-variant;
-    // border-radius: 14px;
+    border-radius: @radius;
 }
 
 
@@ -32,9 +32,9 @@ mainbox {
 
 inputbar {
     background-color: @surface-container;
-    border: 1px;
+    border: @border-w;
     border-color: @outline-variant;
-    border-radius: 10px;
+    border-radius: @radius;
 
     padding: 10px 14px;
     spacing: 8px;
@@ -76,8 +76,9 @@ listview {
     lines: 8;
 
     // scrollbar: false;
-    border: 1px solid;
+    border: @border-w;
     border-color: @outline-variant;
+    border-radius: @radius;
 }
 
 
@@ -93,7 +94,7 @@ element {
     spacing: 10px;
 
     border: 0;
-    border-radius: 8px;
+    border-radius: @radius;
 }
 
 
@@ -195,9 +196,9 @@ scrollbar {
 
 message {
     background-color: @surface-container;
-    border: 1px;
+    border: @border-w;
     border-color: @outline-variant;
-    border-radius: 8px;
+    border-radius: @radius;
 
     padding: 8px;
 }
@@ -211,7 +212,7 @@ error-message {
     background-color: @error-container;
     text-color: @on-error-container;
 
-    border-radius: 8px;
+    border-radius: @radius;
     padding: 10px;
 }
 
@@ -229,7 +230,7 @@ button {
     background-color: transparent;
     text-color: @on-surface-variant;
 
-    border-radius: 8px;
+    border-radius: @radius;
     padding: 7px 10px;
 }
 

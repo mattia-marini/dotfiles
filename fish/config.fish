@@ -79,6 +79,8 @@ fish_add_path /home/mattia/.bun/bin
 set -gx MPD_HOST "/tmp/mpd_socket"
 set -gx EDITOR nvim
 
+fish_add_path "/home/mattia/.local/share/../bin"
+
 
 
 # Added by OrbStack: command-line tools and integration

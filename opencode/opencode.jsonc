@@ -18,5 +18,5 @@
 		},
 		"lsp": "allow"
 	},
-	"plugin": ["opencode-parser", "@mohak34/opencode-notifier@latest"]
+	// "plugin": ["opencode-parser", "@mohak34/opencode-notifier@latest"]
 }

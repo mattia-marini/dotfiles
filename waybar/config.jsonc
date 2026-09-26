@@ -6,10 +6,12 @@
 	"reload_style_on_change": true,
 	"modules-left": [
 		"custom/suspend",
-		"mango/workspaces",
 		"mpris"
 		// "mango/window"
 	],
+
+	"modules-center": ["hyprland/workspaces"],
+
 	"modules-right": [
 		// "group/expand",
 		// "backlight",
@@ -136,15 +138,15 @@
 		"tooltip-format-disconnected": "WiFi-off",
 		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
 		"tooltip-format-ethernet": "{ifname} 🖧 ",
-		"on-click": "rfkill toggle wifi",
-		"on-click-right": "kitty  --app-id impala impala"
+		// "on-click": "rfkill toggle wifi",
+		"on-click": "kitty  --app-id impala impala"
 	},
 	"bluetooth": {
 		"format-on": "󰂯",
 		"format-off": "BT-off",
 		// "format-disabled": "󰂲",
 		"format-connected-battery": "{device_battery_percentage}% 󰂯",
-		"format-alt": "{device_alias} 󰂯",
+		// "format-alt": "{device_alias} 󰂯",
 		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
@@ -152,8 +154,8 @@
 		// "on-lick": "kitty bluetui"
 		// "on-click": "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on",
 		// "on-click-right": "kitty --class bluetui bluetui"
-		"on-click": "rfkill toggle bluetooth",
-		"on-click-right": "kitty --app-id bluetui  bluetui"
+		//"on-click": "rfkill toggle bluetooth",
+		"on-click": "kitty --app-id bluetui  bluetui"
 	},
 	"battery": {
 		"interval": 30,

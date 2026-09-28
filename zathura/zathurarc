@@ -8,6 +8,15 @@ set selection-clipboard clipboard
 set scroll-step 25
 set scroll-hstep 15
 
+unmap q
+unmap [fullscreen] q
+
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+
+map w adjust_window width
+map [fullscreen] w adjust_window width
+
 # Optional: Disable smooth scrolling if GTK interpolated scrolling feels floaty/laggy
 # set smooth-scroll true
 

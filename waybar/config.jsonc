@@ -1,4 +1,5 @@
 {
+	"output": "eDP-1",
 	"spacing": 15,
 	"layer": "top",
 	"position": "top",
@@ -25,6 +26,12 @@
 		"battery",
 		"clock"
 	],
+	"hyprland/workspaces": {
+		"format": "{id}",
+		"persistent-workspaces": {
+			"*": 10
+		}
+	},
 	// "cava": {
 	// 	"input_delay": 2,
 	// 	"actions": {

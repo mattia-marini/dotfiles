@@ -2,8 +2,8 @@
 	"custom": {
 		"font": {
 			"family": "BlexMono Nerd Font Mono",
-			"size_small": "8",
-			"size_medium": "10",
+			"size_small": "10",
+			"size_medium": "12",
 			"size_big": "14",
 
 			"size_small_15": "12",
@@ -12,7 +12,7 @@
 		},
 		"_font": "DepartureMono Nerd Font Mono",
 
-		"scaling": 1.5,
+		"scaling": 1,
 		"border_thickness": 1,
 		"border_radius": 0
 	}

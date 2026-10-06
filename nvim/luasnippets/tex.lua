@@ -1,4 +1,4 @@
-local MoonTex = require("moontex.context")
+local MoonTex = require("tectonic.context")
 return {
       s("main",
         fmt([[

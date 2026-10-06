@@ -7,12 +7,12 @@ x-scheme-handler/https=org.mozilla.firefox.desktop
 x-scheme-handler/about=helium.desktop
 x-scheme-handler/unknown=helium.desktop
 x-scheme-handler/terminal=kitty.desktop
-image/jpeg=com.interversehq.qView.desktop
-image/png=com.interversehq.qView.desktop
-image/gif=com.interversehq.qView.desktop
-image/webp=com.interversehq.qView.desktop
-image/bmp=com.interversehq.qView.desktop
-image/svg+xml=com.interversehq.qView.desktop
+image/jpeg=swayimg.desktop
+image/png=swayimg.desktop
+image/gif=swayimg.desktop
+image/webp=swayimg.desktop
+image/bmp=swayimg.desktop
+image/svg+xml=swayimg.desktop
 application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/chrome=org.mozilla.firefox.desktop
 application/x-extension-htm=org.mozilla.firefox.desktop
@@ -21,6 +21,7 @@ application/x-extension-shtml=org.mozilla.firefox.desktop
 application/xhtml+xml=org.mozilla.firefox.desktop
 application/x-extension-xhtml=org.mozilla.firefox.desktop
 application/x-extension-xht=org.mozilla.firefox.desktop
+image/tiff=swayimg.desktop
 
 [Added Associations]
 x-scheme-handler/http=org.mozilla.firefox.desktop;

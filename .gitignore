@@ -61,6 +61,19 @@
 !/zathura/
 !/zathura/**
 
+!/wireplumber/
+!/wireplumber/**
+
+!/xdg-desktop-portal/
+!/xdg-desktop-portal/**
+
+!/hypr/
+!/hypr/**
+
+!/swayimg/
+!/swayimg/**
+
+
 !info.txt
 !mimeapps.list
 !starship.toml

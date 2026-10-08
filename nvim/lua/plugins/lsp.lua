@@ -63,24 +63,24 @@ local function config()
 	vim.diagnostic.config({ signs = false })
 
 
-	-- vim.lsp.config("clangd", {
-	--   on_attach = on_attach,
-	--   update_in_insert = false,
-	--   capabilities = capabilities
-	--   --cmd = {'clangd', '--fallback-style=/Users/mattia/Desktop/clang-format'},
-	--   --capabilities = capabilities
-	-- })
-	-- vim.lsp.enable("clangd")
-
-	vim.lsp.config("ccls", {
-		on_attach = on_attach,
-		update_in_insert = false,
-		capabilities = capabilities,
-		single_file_support = true
-		--cmd = {'clangd', '--fallback-style=/Users/mattia/Desktop/clang-format'},
-		--capabilities = capabilities
+	vim.lsp.config("clangd", {
+	  on_attach = on_attach,
+	  update_in_insert = false,
+	  capabilities = capabilities
+	  --cmd = {'clangd', '--fallback-style=/Users/mattia/Desktop/clang-format'},
+	  --capabilities = capabilities
 	})
-	vim.lsp.enable("ccls")
+	vim.lsp.enable("clangd")
+
+	-- vim.lsp.config("ccls", {
+	-- 	on_attach = on_attach,
+	-- 	update_in_insert = false,
+	-- 	capabilities = capabilities,
+	-- 	single_file_support = true
+	-- 	--cmd = {'clangd', '--fallback-style=/Users/mattia/Desktop/clang-format'},
+	-- 	--capabilities = capabilities
+	-- })
+	-- vim.lsp.enable("ccls")
 
 
 	vim.lsp.config("texlab", {

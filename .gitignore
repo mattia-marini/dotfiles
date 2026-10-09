@@ -73,6 +73,9 @@
 !/swayimg/
 !/swayimg/**
 
+!/lazygit/
+!/lazygit/**
+
 
 !info.txt
 !mimeapps.list

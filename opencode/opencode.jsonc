@@ -3,20 +3,19 @@
 	"lsp": true,
 
 	// "mcp": {
-	// 	"code-graph": {
-	// 		"type": "local",
-	// 		"command": ["bunx"],
-	// 		"args": ["-y", "@sdsrs/code-graph"]
-	// 	}
+	// 	// "code-graph": {
+	// 	// 	"type": "local",
+	// 	// 	"command": ["bunx", "-y", "@sdsrs/code-graph"]
+	// 	// }
 	// },
 	"permission": {
-		"bash": {
-			"git status*": "allow",
-			"git diff*": "allow",
-			"git log*": "allow",
-			"git show*": "allow"
-		},
+		// "bash": {
+		// 	"git status*": "allow",
+		// 	"git diff*": "allow",
+		// 	"git log*": "allow",
+		// 	"git show*": "allow"
+		// },
 		"lsp": "allow"
-	},
+	}
 	// "plugin": ["opencode-parser", "@mohak34/opencode-notifier@latest"]
 }

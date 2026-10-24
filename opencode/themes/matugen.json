@@ -1,35 +1,35 @@
 {
     "$schema": "https://opencode.ai/theme.json",
     "defs": {
-        "bg": "#121318",
-        "fg": "#e3e2e9",
-        "on_surface": "#e3e2e9",
-        "surface": "#121318",
-        "surface_variant": "#45464f",
-        "on_surface_variant": "#c5c6d0",
+        "bg": "#19120d",
+        "fg": "#f0dfd6",
+        "on_surface": "#f0dfd6",
+        "surface": "#19120d",
+        "surface_variant": "#52443b",
+        "on_surface_variant": "#d6c3b7",
 
-        "primary": "#b4c5ff",
-        "on_primary": "#1a2e60",
-        "primary_container": "#324478",
-        "on_primary_container": "#dbe1ff",
+        "primary": "#ffb783",
+        "on_primary": "#4f2500",
+        "primary_container": "#6d390b",
+        "on_primary_container": "#ffdcc5",
 
-        "secondary": "#c1c6dd",
-        "on_secondary": "#2a3042",
-        "secondary_container": "#414659",
-        "on_secondary_container": "#dde1f9",
+        "secondary": "#e4bfa7",
+        "on_secondary": "#422b1b",
+        "secondary_container": "#5b412f",
+        "on_secondary_container": "#ffdcc5",
 
-        "tertiary": "#e2bbdc",
-        "on_tertiary": "#422741",
-        "tertiary_container": "#5a3d58",
-        "on_tertiary_container": "#ffd6f8",
+        "tertiary": "#c8ca94",
+        "on_tertiary": "#30330b",
+        "tertiary_container": "#474920",
+        "on_tertiary_container": "#e4e6ae",
 
         "error": "#ffb4ab",
         "on_error": "#690005",
         "error_container": "#93000a",
         "on_error_container": "#ffdad6",
 
-        "outline": "#8f909a",
-        "outline_variant": "#45464f"
+        "outline": "#9f8d83",
+        "outline_variant": "#52443b"
     },
     "theme": {
         "primary": "primary",

@@ -7,23 +7,23 @@ window#waybar {
 }
 
 .modules-left {
-	padding: 7;
-    margin: 8 0 0 8;
+	padding: 7px;
+    margin: 8px 0px 0px 8px;
     background: alpha(@surface, .8);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 }
 
 .modules-center {
-	padding: 7;
+	padding: 7px;
     margin: 0px 0px 0px 10px;
-    margin: 8 0 0 0;
+    margin: 8px 0px 0px 0px;
     background: alpha(@surface, .8);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 }
 
 .modules-right {
-	padding: 7;
-    margin: 8 8 0 0;
+	padding: 7px;
+    margin: 8px 8px 0px 0px;
     background: alpha(@surface, .8);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.35);
 }

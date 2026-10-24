@@ -1,5 +1,5 @@
 {
-	"output": "eDP-1",
+	// "output": "eDP-1",
 	"spacing": 15,
 	"layer": "top",
 	"position": "top",
@@ -33,12 +33,12 @@
 			"*": 10
 		}
 	},
-	// "cava": {
-	// 	"input_delay": 2,
-	// 	"actions": {
-	// 		"on-click-right": "mode"
-	// 	}
-	// },
+	"cava": {
+		"input_delay": 2,
+		"actions": {
+			"on-click-right": "mode"
+		}
+	},
 	"backlight/slider": {
 		"min": 0,
 		"max": 100,
@@ -46,15 +46,15 @@
 		"device": "intel_backlight"
 	},
 
-	// "custom/cava": {
-	// 	"exec": "~/.config/waybar/scripts/cava.sh",
-	// 	"exec-on-event": false,
-	// 	"return-type": "json",
-	// 	"escape": true,
-	// 	"format": "{}",
-	// 	"tooltip": false,
-	// 	"on-click-right": "kitty cava"
-	// },
+	"custom/cava": {
+		"exec": "~/.config/waybar/scripts/cava.sh",
+		"exec-on-event": false,
+		"return-type": "json",
+		"escape": true,
+		"format": "{}",
+		"tooltip": false,
+		"on-click-right": "kitty cava"
+	},
 	"mango/window": {
 		"format": "{title}",
 		"rewrite": {

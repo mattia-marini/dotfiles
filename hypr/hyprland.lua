@@ -313,6 +313,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu .. " -show drun"))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({action = "toggle", mode = "fullscreen"}))
 
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
@@ -376,6 +377,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"
 -- hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86TouchpadToggle", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 hl.bind("XF86TouchpadOn", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPlay ", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("F23", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 
 

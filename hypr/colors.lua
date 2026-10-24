@@ -5,33 +5,33 @@
 -- Colors are Hyprland-ready rgba(RRGGBBAA) strings.
 
 return {
-	primary                    = "rgba(FFB783FF)",
-	on_primary                 = "rgba(4F2500FF)",
-	primary_container          = "rgba(6D390BFF)",
-	on_primary_container       = "rgba(FFDCC5FF)",
+	primary                    = "rgba(9AD4A2FF)",
+	on_primary                 = "rgba(003917FF)",
+	primary_container          = "rgba(19512AFF)",
+	on_primary_container       = "rgba(B5F1BCFF)",
 
-	secondary                  = "rgba(E4BFA7FF)",
-	on_secondary               = "rgba(422B1BFF)",
-	secondary_container        = "rgba(5B412FFF)",
-	on_secondary_container     = "rgba(FFDCC5FF)",
+	secondary                  = "rgba(B7CCB7FF)",
+	on_secondary               = "rgba(233425FF)",
+	secondary_container        = "rgba(394B3BFF)",
+	on_secondary_container     = "rgba(D3E8D2FF)",
 
-	tertiary                   = "rgba(C8CA94FF)",
-	on_tertiary                = "rgba(30330BFF)",
-	tertiary_container         = "rgba(474920FF)",
-	on_tertiary_container      = "rgba(E4E6AEFF)",
+	tertiary                   = "rgba(A1CED8FF)",
+	on_tertiary                = "rgba(00363EFF)",
+	tertiary_container         = "rgba(204D55FF)",
+	on_tertiary_container      = "rgba(BDEAF4FF)",
 
 	error                      = "rgba(FFB4ABFF)",
 	on_error                   = "rgba(690005FF)",
 
-	background                 = "rgba(19120DFF)",
-	on_background              = "rgba(F0DFD6FF)",
-	surface                    = "rgba(19120DFF)",
-	on_surface                 = "rgba(F0DFD6FF)",
-	surface_variant            = "rgba(52443BFF)",
-	on_surface_variant         = "rgba(D6C3B7FF)",
+	background                 = "rgba(101510FF)",
+	on_background              = "rgba(DFE4DCFF)",
+	surface                    = "rgba(101510FF)",
+	on_surface                 = "rgba(DFE4DCFF)",
+	surface_variant            = "rgba(414941FF)",
+	on_surface_variant         = "rgba(C1C9BEFF)",
 
-	outline                    = "rgba(9F8D83FF)",
-	outline_variant            = "rgba(52443BFF)",
+	outline                    = "rgba(8B9389FF)",
+	outline_variant            = "rgba(414941FF)",
 	shadow                     = "rgba(000000FF)",
 
 	-- Layout metrics (UNSCALED).

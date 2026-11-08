@@ -29,6 +29,7 @@ return {
 		completion = {
 			documentation = {
 				window = {
+					border = 'none',
 					winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder",
 				},
 				auto_show = true,
@@ -36,8 +37,14 @@ return {
 				treesitter_highlighting = true,
 			},
 			menu = {
-				winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection",
-			}
+				border = 'none',
+				-- winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection",
+			},
+		},
+		signature = {
+			window = {
+				border = 'none',
+			},
 		},
 		keymap = {
 			preset = 'default',

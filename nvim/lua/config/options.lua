@@ -9,7 +9,7 @@ vim.opt.wrap = false
 vim.opt.cursorline = true
 
 -- vim.g.terminal_emulator = 'wezterm'
-vim.o.shell = '/usr/local/bin/fish'
+vim.o.shell = '/usr/bin/fish'
 vim.opt.ignorecase = true
 
 -- vim.o.foldcolumn = '0'

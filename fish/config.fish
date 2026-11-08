@@ -17,9 +17,25 @@ mise activate fish | source
 # eval "$(flox activate)"
 # flox activate -d /Users/mattia/ --print-script | source # activate current env or default
 
+# Set up fzf key bindings
+# fzf --fish | source
+
+
+# sk --shell fish | source
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Set default command for general skim invocations
+    set -gx SKIM_DEFAULT_COMMAND "fd --type f --hidden --exclude .git"
+
+    # Explicitly set command for Ctrl + T (File widget)
+    set -gx SKIM_CTRL_T_COMMAND "fd --type f --hidden --exclude .git"
+
+    # Set command for Alt + C (Directory widget)
+    set -gx SKIM_ALT_C_COMMAND "fd --type d --hidden --exclude .git"
+
+    # Initialize skim and key bindings
+    sk --shell fish | source
+    skim_key_bindings
 end
 
 # Set up PATH

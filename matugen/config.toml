@@ -29,12 +29,22 @@ post_hook = "pkill -SIGUSR2 waybar || true"
 [templates.kitty-colors]
 input_path = "./templates/kitty-colors.conf"
 output_path = "~/.cache/matugen_outputs/kitty-colors.conf"
-post_hook = "kitty @ load-config ~/.config/kitty/kitty.conf"
+post_hook = "kitty @ load-config ~/.config/kitty/kitty.conf || true"
 
 [templates.kitty-fonts]
 input_path = "./templates/kitty-fonts.conf"
 output_path = "~/.cache/matugen_outputs/kitty-fonts.conf"
 # post_hook = "pkill -USR1 -x kitty"
+
+[templates.ghostty-colors]
+input_path = "./templates/ghostty-colors.conf"
+output_path = "~/.cache/matugen_outputs/ghostty-colors.conf"
+post_hook = 'gdbus call --session --dest com.mitchellh.ghostty --object-path /com/mitchellh/ghostty --method org.gtk.Actions.Activate "reload-config" "[]" "{}" || true'
+
+[templates.ghostty-fonts]
+input_path = "./templates/ghostty-fonts.conf"
+output_path = "~/.cache/matugen_outputs/ghostty-fonts.conf"
+post_hook = 'gdbus call --session --dest com.mitchellh.ghostty --object-path /com/mitchellh/ghostty --method org.gtk.Actions.Activate "reload-config" "[]" "{}" || true'
 
 
 [templates.gtk3]

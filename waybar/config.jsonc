@@ -53,7 +53,7 @@
 		"escape": true,
 		"format": "{}",
 		"tooltip": false,
-		"on-click-right": "kitty cava"
+		"on-click-right": "ghostty -e cava"
 	},
 	"mango/window": {
 		"format": "{title}",
@@ -147,7 +147,7 @@
 		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
 		"tooltip-format-ethernet": "{ifname} 🖧 ",
 		// "on-click": "rfkill toggle wifi",
-		"on-click": "kitty  --app-id impala impala"
+		"on-click": "ghostty --class=impala -e impala"
 	},
 	"bluetooth": {
 		"format-on": "󰂯",
@@ -159,11 +159,11 @@
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
 		"tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-		// "on-lick": "kitty bluetui"
+		// "on-lick": "ghostty -e bluetui"
 		// "on-click": "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on",
-		// "on-click-right": "kitty --class bluetui bluetui"
+		// "on-click-right": "ghostty --class=bluetui -e bluetui"
 		//"on-click": "rfkill toggle bluetooth",
-		"on-click": "kitty --app-id bluetui  bluetui"
+		"on-click": "ghostty --class=bluetui -e bluetui"
 	},
 	"battery": {
 		"interval": 30,
@@ -183,7 +183,7 @@
 		"interval": 30,
 		"exec": "checkupdates | wc -l",
 		"exec-if": "exit 0",
-		"on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+		"on-click": "ghostty -e sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
 		"signal": 8,
 		"tooltip": false
 	},
@@ -222,12 +222,12 @@
 	"cpu": {
 		"format": "{usage}% 󰻠",
 		"tooltip": true,
-		"on-click": "kitty --class btop btop"
+		"on-click": "ghostty --class=btop -e btop"
 	},
 	"memory": {
 		"format": "{}% 󰍛",
 		"tooltip": true,
-		"on-click": "kitty --class btop btop"
+		"on-click": "ghostty --class=btop -e btop"
 	},
 	"temperature": {
 		"critical-threshold": 80,

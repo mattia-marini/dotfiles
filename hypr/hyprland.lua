@@ -35,7 +35,7 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal            = "kitty"
+local terminal            = "ghostty"
 local fileManager         = "nemo"
 local menu                = "rofi"
 
@@ -72,6 +72,7 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("TERMINAL", "ghostty")
 
 
 -----------------------
@@ -277,7 +278,7 @@ hl.config({
 
 		follow_mouse            = 1,
 
-		sensitivity   = 0.3, -- -1.0 - 1.0, 0 means no modification.
+		sensitivity             = 0.3, -- -1.0 - 1.0, 0 means no modification.
 
 		accel_profile           = "flat",
 		emulate_discrete_scroll = 0,
@@ -313,7 +314,9 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu .. " -show drun"))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({action = "toggle", mode = "fullscreen"}))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle", mode = "fullscreen" }))
+
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
@@ -432,6 +435,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name    = "ghostty_blur",
+	match   = { class = "com.mitchellh.ghostty" },
+	opacity = "0.90 override",
+})
+
+hl.window_rule({
 	name    = "kitty_blur",
 	match   = { class = "kitty" },
 	opacity = "0.9 override",
@@ -453,7 +462,7 @@ hl.window_rule({
 		class = "^bluetui$",
 	},
 	float  = true,
-	size   = { 900, 500 },
+	size   = { 1200, 700 },
 	center = true,
 })
 
@@ -463,7 +472,7 @@ hl.window_rule({
 		class = "^btop$",
 	},
 	float  = true,
-	size   = { 900, 500 },
+	size   = { 1200, 700 },
 	center = true,
 })
 
@@ -473,7 +482,7 @@ hl.window_rule({
 		class = ".*pairdrop.*",
 	},
 	float  = true,
-	size   = { 900, 500 },
+	size   = { 1200, 700 },
 	center = true,
 })
 

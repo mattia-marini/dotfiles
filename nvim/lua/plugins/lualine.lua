@@ -46,7 +46,7 @@ return {
 			{
 				options = {
 					icons_enabled = false,
-					theme = require("matugen.lualine").theme,
+					-- theme = require("matugen.lualine").theme,
 				}
 				-- sections = {
 				-- 	lualine_a = { 'mode' },

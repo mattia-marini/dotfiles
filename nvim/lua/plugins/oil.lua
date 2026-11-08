@@ -42,7 +42,7 @@ return {
 					local oil = require("oil")
 					local dir = oil.get_current_dir()
 					if dir then
-						vim.fn.jobstart({ "kitty", "--directory", dir }, { detach = true })
+						vim.fn.jobstart({ "ghostty", "--working-directory=" .. dir }, { detach = true })
 					else
 						vim.notify("Could not get current directory from Oil",
 							vim.log.levels.WARN)

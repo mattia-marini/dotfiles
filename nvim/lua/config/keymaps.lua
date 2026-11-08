@@ -20,6 +20,16 @@ vim.keymap.set({ 'n', 'v' }, '<space>h', '<C-w>h', { silent = true })
 
 vim.api.nvim_set_keymap('n', '<space><tab>', 'gt', { silent = true })
 vim.api.nvim_set_keymap('n', '<space>p', 'gT', { silent = true })
+
+-- Cycle through tabs
+vim.keymap.set({ 'n', 'i', 'v', 't' }, '<C-Tab>', '<cmd>tabnext<CR>', {
+	silent = true,
+	desc = 'Next tab',
+})
+vim.keymap.set({ 'n', 'i', 'v', 't' }, '<C-S-Tab>', '<cmd>tabprevious<CR>', {
+	silent = true,
+	desc = 'Previous tab',
+})
 vim.api.nvim_set_keymap('n', '<space>e', ':Oil<CR>', { silent = true })
 vim.api.nvim_set_keymap('n', '<space>E', ':vsplit | Oil<CR>', { silent = true })
 

@@ -49,7 +49,7 @@
             "tooltip-format-disconnected": "Error",
             "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
             "tooltip-format-ethernet": "{ifname} 🖧 ",
-            "on-click": "kitty nmtui"
+            "on-click": "ghostty -e nmtui"
         },
         "bluetooth": {
             "format-on": "󰂯",
@@ -88,7 +88,7 @@
             "interval": 30,   
             "exec": "checkupdates | wc -l",
             "exec-if": "exit 0",
-            "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            "on-click": "ghostty -e sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
             "signal": 8,
             "tooltip": false,
         },

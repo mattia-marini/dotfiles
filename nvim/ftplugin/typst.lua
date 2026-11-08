@@ -47,7 +47,49 @@ local function infer_root(buf)
 		end
 	end
 
-	return source_dir
+	return vim.fs.root(source, { ".git" }) or source_dir
+end
+
+local function close_watch_tab(state)
+	state.stopping = true
+
+	if state.watcher and state.watcher > 0 then
+		local id = state.watcher
+		state.watcher = nil
+		vim.fn.jobstop(id)
+		-- Give the process a moment to exit so closing the tab doesn't prompt.
+		pcall(vim.fn.jobwait, { id }, 1000)
+	end
+
+	local tab = state.watch_tab
+	local buf = state.watch_buf
+	state.watch_tab = nil
+	state.watch_buf = nil
+
+	if not tab or not vim.api.nvim_tabpage_is_valid(tab) then
+		if buf and vim.api.nvim_buf_is_valid(buf) then
+			pcall(vim.api.nvim_buf_delete, buf, { force = true })
+		end
+		return
+	end
+
+	local win = vim.api.nvim_tabpage_get_win(tab)
+	if win and vim.api.nvim_win_is_valid(win) then
+		local ok = pcall(vim.api.nvim_win_close, win, true)
+		if ok then
+			return
+		end
+	end
+
+	-- Fallback: switch to the tab and close it explicitly.
+	local current = vim.api.nvim_get_current_tabpage()
+	if current ~= tab then
+		pcall(vim.api.nvim_set_current_tabpage, tab)
+	end
+	pcall(vim.cmd, "tabclose!")
+	if current ~= tab and vim.api.nvim_tabpage_is_valid(current) then
+		pcall(vim.api.nvim_set_current_tabpage, current)
+	end
 end
 
 local function stop(buf)
@@ -58,7 +100,9 @@ local function stop(buf)
 
 	jobs[buf] = nil
 
-	for _, id in ipairs({ job.watcher, job.zathura, job.initial }) do
+	close_watch_tab(job)
+
+	for _, id in ipairs({ job.zathura, job.initial }) do
 		if id and id > 0 then
 			vim.fn.jobstop(id)
 		end
@@ -98,6 +142,15 @@ local function compile_toggle()
 		end
 
 		jobs[buf] = nil
+
+		if state.initial and state.initial > 0 then
+			vim.fn.jobstop(state.initial)
+		end
+		close_watch_tab(state)
+		if state.zathura and state.zathura > 0 then
+			vim.fn.jobstop(state.zathura)
+		end
+
 		vim.notify(message, vim.log.levels.ERROR)
 	end
 
@@ -126,9 +179,16 @@ local function compile_toggle()
 				}, {
 					on_exit = function()
 						vim.schedule(function()
-							if jobs[buf] == state then
-								state.zathura = nil
+							if jobs[buf] ~= state then
+								return
 							end
+
+							state.zathura = nil
+							jobs[buf] = nil
+							close_watch_tab(state)
+							vim.notify(
+								"Zathura closed; Typst watcher stopped"
+							)
 						end)
 					end,
 				})
@@ -138,15 +198,25 @@ local function compile_toggle()
 					return
 				end
 
-				-- Continue recompiling changes in the background.
+				-- Continue recompiling changes in a dedicated terminal tab.
+				local previous_tab = vim.api.nvim_get_current_tabpage()
+				vim.cmd("tabnew")
+				state.watch_tab = vim.api.nvim_get_current_tabpage()
+
 				state.watcher = vim.fn.jobstart({
 					"typst", "watch",
 					"--root", root,
 					source, output,
 				}, {
 					cwd = root,
+					term = true,
 					on_exit = function(_, watch_code)
 						vim.schedule(function()
+							if state.stopping then
+								state.watcher = nil
+								return
+							end
+
 							if jobs[buf] ~= state then
 								return
 							end
@@ -165,8 +235,22 @@ local function compile_toggle()
 				})
 
 				if not state.watcher or state.watcher <= 0 then
+					state.watch_tab = nil
+					pcall(vim.cmd, "tabclose")
+					if vim.api.nvim_tabpage_is_valid(previous_tab) then
+						pcall(vim.api.nvim_set_current_tabpage, previous_tab)
+					end
 					fail("Failed to start Typst watcher")
 					return
+				end
+
+				state.watch_buf = vim.api.nvim_get_current_buf()
+				vim.bo[state.watch_buf].bufhidden = "wipe"
+				vim.bo[state.watch_buf].buflisted = false
+
+				-- Keep the focus on the tab containing the document.
+				if vim.api.nvim_tabpage_is_valid(previous_tab) then
+					pcall(vim.api.nvim_set_current_tabpage, previous_tab)
 				end
 
 				vim.notify("Typst watcher started: " .. output)

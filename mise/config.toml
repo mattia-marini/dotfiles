@@ -3,6 +3,6 @@
 bun = "latest"
 go = "latest"
 java = "25"
-node = "lts"
+node = "latest"
 python = "3.14"
 rust = "latest"

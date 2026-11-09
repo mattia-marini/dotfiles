@@ -1,0 +1,92 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/mattia/.config/ghostty/config.ghostty
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options.
+# Note that you should not paste the output of `ghostty +show-config
+# --default` into your config: some default options actually conflict with each other
+# when explicitly set in a configuration file. Instead, only set the
+# options you actually need.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+#
+window-padding-color = extend
+window-padding-balance = true
+
+# --- Migrated from kitty ---
+
+# Matugen-generated colors and fonts (same generator as kitty).
+config-file = ?/home/mattia/.cache/matugen_outputs/ghostty-colors.conf
+config-file = ?/home/mattia/.cache/matugen_outputs/ghostty-fonts.conf
+
+# Shell.
+command = fish
+
+# Ctrl+C: copy the selection if there is one, otherwise send the interrupt.
+keybind = performable:ctrl+c=copy_to_clipboard
+
+# Let Neovim receive Ctrl+Tab / Ctrl+Shift+Tab for its own tab navigation.
+# Ghostty binds these to terminal tabs by default.
+keybind = ctrl+tab=unbind
+keybind = ctrl+shift+tab=unbind
+
+# Match the kitty settings we used.
+cursor-style-blink = false
+mouse-hide-while-typing = true
+background-blur = true
+
+
+adjust-cursor-thickness = 100%
+
+# Ensure vsync is enabled (default is true, but verify it's not disabled)
+# resize-overlay = always
+# window-vsync = true
+# window-inherit-working-directory = false
+
+
+# Equivalent of kitty's `env PATH=${PATH}:${HOME}/.local/share/mise/shims`.
+# Ghostty's `env` does not expand ${PATH}, so this is the systemd/Hyprland
+# PATH plus the mise shims. For fish shells, `mise activate fish` also
+# prepends the project-specific mise paths.
+env = PATH=/home/mattia/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/mattia/.local/share/mise/shims

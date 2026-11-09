@@ -76,6 +76,9 @@
 !/lazygit/
 !/lazygit/**
 
+!/ghostty/
+!/ghostty/**
+
 
 !info.txt
 !mimeapps.list

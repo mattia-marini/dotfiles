@@ -169,33 +169,42 @@ local function compile_toggle()
 
 				state.initial = nil
 
-				if code ~= 0 or vim.fn.filereadable(output) ~= 1 then
-					fail("Initial Typst compilation failed")
-					return
+				local compiled = code == 0
+					and vim.fn.filereadable(output) == 1
+
+				if not compiled then
+					-- Keep the watcher running so its output can be used
+					-- for debugging, even though the first compile failed.
+					vim.notify(
+						"Initial Typst compilation failed",
+						vim.log.levels.ERROR
+					)
 				end
 
-				state.zathura = vim.fn.jobstart({
-					"zathura", output,
-				}, {
-					on_exit = function()
-						vim.schedule(function()
-							if jobs[buf] ~= state then
-								return
-							end
+				if compiled then
+					state.zathura = vim.fn.jobstart({
+						"zathura", output,
+					}, {
+						on_exit = function()
+							vim.schedule(function()
+								if jobs[buf] ~= state then
+									return
+								end
 
-							state.zathura = nil
-							jobs[buf] = nil
-							close_watch_tab(state)
-							vim.notify(
-								"Zathura closed; Typst watcher stopped"
-							)
-						end)
-					end,
-				})
+								state.zathura = nil
+								jobs[buf] = nil
+								close_watch_tab(state)
+								vim.notify(
+									"Zathura closed; Typst watcher stopped"
+								)
+							end)
+						end,
+					})
 
-				if not state.zathura or state.zathura <= 0 then
-					fail("Failed to start Zathura")
-					return
+					if not state.zathura or state.zathura <= 0 then
+						fail("Failed to start Zathura")
+						return
+					end
 				end
 
 				-- Continue recompiling changes in a dedicated terminal tab.

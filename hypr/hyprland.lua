@@ -113,6 +113,9 @@ local theme = require("colors")
 
 hl.config({
 
+	master = {
+		new_status = "slave",
+	},
 	-- screencopy = {
 	--
 	-- 	custom_picker_binary = "rofi"
@@ -317,6 +320,10 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu .. " -show drun"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle", mode = "fullscreen" }))
 
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+
+hl.bind(mainMod .. " + RETURN", function()
+	os.execute(os.getenv("HOME") .. "/.config/hypr/scripts/hypr-layout-picker.sh &")
+end)
 
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))

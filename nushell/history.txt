@@ -1,0 +1,40 @@
+exit
+ls
+ls 
+DT
+clear
+lazygit
+tree
+eza tree
+exit
+exit
+ls
+sudo pacman -S zoxide
+z prova
+ls
+exit
+ls
+cd
+Desktop/russell/marini-didattica/
+materiale/content/raw/private/admin/corrections/2c/prova-1/
+nud
+exit
+nu
+exit
+fzf
+print "interactive ok"
+exit
+exit
+DT
+ls
+conf
+cd nushell/
+tree
+exit
+nvim .
+exit
+DT
+conf
+cd hypr
+nvim .
+exit

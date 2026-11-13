@@ -79,6 +79,9 @@
 !/ghostty/
 !/ghostty/**
 
+!/nushell/
+!/nushell/**
+
 
 !info.txt
 !mimeapps.list
